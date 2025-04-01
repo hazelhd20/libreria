@@ -24,8 +24,8 @@ require 'seguridad.php';
       <?php
       require "conexion.php";
       $id_usuario = $_GET['id'];
-      $verusuario = "SELECT * FROM usuarios WHERE id_usuario = '$id_usuario'";
-      $resultado = mysqli_query($conectar, $verusuario);
+      $ver_usuario = "SELECT * FROM usuarios WHERE id_usuario = '$id_usuario'";
+      $resultado = mysqli_query($conectar, $ver_usuario);
       $fila = $resultado->fetch_array();
       ?>
 

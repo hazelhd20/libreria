@@ -362,7 +362,7 @@ select:hover {
   justify-content: center;
 }
 
-.tot_usuarios {
+.cuadro_total {
   width: 25%;
   text-align: center;
   padding: 24px;
@@ -372,8 +372,13 @@ select:hover {
   transition: var(--transition);
 }
 
-.tot_usuarios:hover {
+.cuadro_total:hover {
   transform: translateY(-5px);
+}
+
+.cuadro_total h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
 /* Table styles */
