@@ -8,7 +8,7 @@ require 'seguridad.php';
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Editar Usuario</title>
+  <title>Ver Usuario</title>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -18,14 +18,14 @@ require 'seguridad.php';
     <?php include 'barra.php'; ?>
     <div class="contenido2">
       <h2 class="centrar mb16"><i class='fas fa-eye'></i> Ver usuario</h2>
-      <div class="contenedor_cuadros form">
+      <div class="form">
         <?php
         require "conexion.php";
 
         if (isset($_GET['id']) && is_numeric($_GET['id'])) {
           $id_usuario = mysqli_real_escape_string($conectar, $_GET['id']);
 
-          $ver_usuario = "SELECT nombre_usuario, apellido_usuario, correo_usuario, contra_usuario, nacimiento_usuario FROM usuarios WHERE id_usuario = '$id_usuario'";
+          $ver_usuario = "SELECT * FROM usuarios WHERE id_usuario = '$id_usuario'";
           $resultado = mysqli_query($conectar, $ver_usuario);
 
           if ($fila = $resultado->fetch_assoc()) {
@@ -42,7 +42,6 @@ require 'seguridad.php';
               <hr>
               <p><strong>Fecha de Nacimiento:</strong></p>
               <p><?php echo htmlspecialchars($fila["nacimiento_usuario"]); ?></p>
-              <hr>
             </div>
 
         <?php
@@ -54,9 +53,11 @@ require 'seguridad.php';
         }
         ?>
       </div>
-      <a href="lista_usuarios.php" class="boton_circular">
-        <i class="fas fa-arrow-left"></i>
-      </a>
+      <div class="contenedor_boton_form">
+        <a href="lista_usuarios.php" class="boton_circular">
+          <i class="fas fa-arrow-left"></i>
+        </a>
+      </div>
     </div>
   </div>
 </body>

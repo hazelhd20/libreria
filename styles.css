@@ -58,7 +58,7 @@ body {
   border-radius: 12px;
   background-color: var(--color3);
   box-shadow: var(--shadow);
-  margin: 32px auto;
+  margin: 32px auto 0px auto;
 }
 
 .form {
@@ -155,43 +155,59 @@ select:hover {
   box-shadow: var(--shadow);
 }
 
-/* Buttons */
-.boton, .boton1 {
-  color: var(--color3);
+/* Botones generales */
+.boton, .boton1, .boton_circular {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 30px;
   font-weight: 500;
   cursor: pointer;
   transition: var(--transition);
-  gap: 8px;
   text-decoration: none;
 }
 
+/* Botón principal */
 .boton {
   width: 100%;
   border: none;
   padding: 12px 24px;
   font-size: 16px;
+  color: var(--color3);
+  border-radius: 30px;
 }
 
+/* Botón secundario */
 .boton1 {
   padding: 10px 24px;
-  border-radius: 30px;
   font-size: 14px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border: 1px solid transparent;
   min-width: 160px;
   text-align: center;
+  color: var(--color3);
+  border-radius: 30px;
 }
 
-.boton:hover, .boton1:hover {
+/* Botón circular */
+.boton_circular {
+  margin-top: 10px;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  color: var(--color10);
+  border: none;
+  border-radius: 50%;
+  font-size: 16px;
+  box-shadow: var(--shadow);
+}
+
+/* Efectos al interactuar */
+.boton:hover, .boton1:hover, .boton_circular:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-.boton:active, .boton1:active {
+.boton:active, .boton1:active, .boton_circular:active {
   transform: translateY(0);
 }
 
@@ -199,27 +215,12 @@ select:hover {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+
 .contenedor_btn {
   display: flex;
   gap: 20px;
   justify-content: center;
   margin: 25px 0;
-}
-
-.boton_circular {
-  margin-top: 10px;
-  width: 50px;
-  height: 50px;
-  background-color: white;
-  color: var(--color10);
-  border: 1px #ccc solid;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  cursor: pointer;
-  text-decoration: none;
 }
 
 /* Logo and headers */
@@ -236,13 +237,13 @@ select:hover {
 }
 
 .contenedor_logo img {
-  max-width: 300px;
+  width: 10%;
   height: auto;
   margin-top: 30px;
 }
 
 .logo_barra img {
-  width: 80%;
+  width: 45%;
   max-width: 160px;
 }
 
@@ -494,4 +495,12 @@ hr {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+.contenedor_boton_form {
+  width: 800px;
+  max-width: 100%;
+  margin: 5px auto 0 auto;
+  display: flex;
+  justify-content: flex-start;
 }

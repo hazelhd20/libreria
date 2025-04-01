@@ -27,7 +27,7 @@ require 'seguridad.php';
       $id_autor = $_GET['id'];
       $ver_autor = "SELECT * FROM autores WHERE id_autor = '$id_autor'";
       $resultado = mysqli_query($conectar, $ver_autor);
-      $fila = $resultado->fetch_array();
+      $fila = $resultado->fetch_assoc();
       ?>
 
       <form action="actualizar_autor.php" method="post" id="formEditarAutor" class="form">
@@ -46,6 +46,11 @@ require 'seguridad.php';
         </div>
         <button class="boton gris" id="btn_validar" type="button">Actualizar autor</button>
       </form>
+      <div class="contenedor_boton_form">
+        <a href="lista_autores.php" class="boton_circular">
+          <i class="fas fa-arrow-left"></i>
+        </a>
+      </div>
     </div>
   </div>
 </body>

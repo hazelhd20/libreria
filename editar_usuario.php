@@ -26,7 +26,7 @@ require 'seguridad.php';
       $id_usuario = $_GET['id'];
       $ver_usuario = "SELECT * FROM usuarios WHERE id_usuario = '$id_usuario'";
       $resultado = mysqli_query($conectar, $ver_usuario);
-      $fila = $resultado->fetch_array();
+      $fila = $resultado->fetch_assoc();
       ?>
 
       <form action="actualizar_usuario.php" method="post" id="frmEditar" class="form">
@@ -59,9 +59,11 @@ require 'seguridad.php';
         </div>
         <button class="boton gris" id="btn_validar" type="submit">Actualizar usuario</button>
       </form>
-      <a href="lista_usuarios.php" class="boton_circular">
-        <i class="fas fa-arrow-left"></i>
-      </a>
+      <div class="contenedor_boton_form">
+        <a href="lista_usuarios.php" class="boton_circular">
+          <i class="fas fa-arrow-left"></i>
+        </a>
+      </div>
     </div>
   </div>
 </body>
