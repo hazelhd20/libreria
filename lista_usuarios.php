@@ -8,7 +8,8 @@ require "conexion.php";
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ver usuarios</title>
+  <title>Lista usuarios</title>
+  <link rel="icon" href="imagenes/logo.ico" type="image/x-icon"/>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -36,12 +37,12 @@ require "conexion.php";
         <table>
           <thead>
             <tr>
-              <th class='centrar'>ID</th>
+              <th class='ancho_id centrar'>ID</th>
               <th>Nombres</th>
               <th>Apellidos</th>
               <th>Email</th>
               <th>Fecha de nacimiento</th>
-              <th class='centrar'>Acciones</th>
+              <th class='ancho_botones centrar'>Acciones</th>
             </tr>
           </thead>
           <tbody>
